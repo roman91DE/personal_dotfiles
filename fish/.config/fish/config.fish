@@ -1,11 +1,18 @@
+# Fix VS Code escape key issue
+# if test "$TERM_PROGRAM" = "vscode"
+#     set -gx VSCODE_SHELL_INTEGRATION 0
+#     bind -e \e\[I
+# end
+
+# Only apply in interactive sessions
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    # Use vi key bindings
+    set -g fish_key_bindings fish_vi_key_bindings
+
+    # Additional interactive-only commands can go here
 end
 
-# use vi-keybindings
-set -g fish_key_bindings fish_vi_key_bindings
-
-# Add the homebrew bin and sbin directories to the PATH
+# Add the Homebrew bin and sbin directories to the PATH
 if test -d /opt/homebrew/bin
     set -gx PATH /opt/homebrew/bin $PATH
 end
@@ -13,9 +20,9 @@ end
 if test -d /opt/homebrew/sbin
     set -gx PATH /opt/homebrew/sbin $PATH
 end
-# activate miniconda if exists
-set CONDA_FISH_INIT_FILE "$HOME/miniconda3/etc/fish/conf.d/conda.fish"
 
+# Activate miniconda if it exists
+set CONDA_FISH_INIT_FILE "$HOME/miniconda3/etc/fish/conf.d/conda.fish"
 if test -e $CONDA_FISH_INIT_FILE
     source $CONDA_FISH_INIT_FILE
 end
