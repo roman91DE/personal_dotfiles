@@ -1,7 +1,9 @@
 # ~/.zshrc: executed by zsh for interactive shells.
  
 
-If not running interactively, return immediately
+# Only run the rest if this is an interactive shell
+[[ $- != *i* ]] && return
+
 
 # Add Homebrew to PATH on MacOS
 if [[ -d /opt/homebrew/bin ]]; then
