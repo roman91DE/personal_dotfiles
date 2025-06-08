@@ -1,7 +1,14 @@
 # ~/.zshrc: executed by zsh for interactive shells.
+ 
 
-# If not running interactively, return immediately
-[[ -o interactive ]] || return
+If not running interactively, return immediately
+
+# Add Homebrew to PATH on MacOS
+if [[ -d /opt/homebrew/bin ]]; then
+  export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+elif [[ -d /usr/local/bin ]]; then
+  export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+fi
 
 # Don't put duplicate lines or lines starting with space in the history
 setopt HIST_IGNORE_ALL_DUPS
