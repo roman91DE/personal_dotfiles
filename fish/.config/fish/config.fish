@@ -21,6 +21,14 @@ if test -d /opt/homebrew/sbin
     set -gx PATH /opt/homebrew/sbin $PATH
 end
 
+# ~/.config/fish/config.fish
+
+# Add standard system paths if running on Alpine Linux
+if test -f /etc/alpine-release
+        fish_add_path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+        end
+
+
 # Activate miniconda if it exists
 set CONDA_FISH_INIT_FILE "$HOME/miniconda3/etc/fish/conf.d/conda.fish"
 if test -e $CONDA_FISH_INIT_FILE
