@@ -96,3 +96,8 @@ export JAVA_HOME="/opt/homebrew/opt/openjdk@$JAVAVERSION"
 if [ -d "$HOME/.ghcup/bin" ]; then
   export PATH="$HOME/.ghcup/bin:$PATH"
 fi
+
+if [ -d "$HOME/venvs/ipythonVenv" ]; then
+    source "$HOME/venvs/ipythonVenv/bin/activate"
+fi
+
