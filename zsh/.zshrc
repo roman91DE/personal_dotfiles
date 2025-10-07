@@ -88,10 +88,19 @@ export IPYTHONDIR=~/.ipython
 # options include 11, 17
 JAVAVERSION="11"
 
-export PATH="/opt/homebrew/opt/openjdk@$JAVAVERSION/bin:$PATH"
-export JAVA_HOME="/opt/homebrew/opt/openjdk@$JAVAVERSION"
 
 
+# If OpenJDK via Homebrew is installed, add it to the PATH
+if [ -d "/opt/homebrew/opt/openjdk@$JAVAVERSION/bin" ]; then
+    export PATH="/opt/homebrew/opt/openjdk@$JAVAVERSION/bin:$PATH"
+    export JAVA_HOME="/opt/homebrew/opt/openjdk@$JAVAVERSION"
+fi
+
+# If Temurin JDK is installed, add it to the PATH
+if [ -d "/Library/Java/JavaVirtualMachines/temurin-$JAVAVERSION.jdk/Contents/Home/bin" ]; then
+    export PATH="/Library/Java/JavaVirtualMachines/temurin-$JAVAVERSION.jdk/Contents/Home/bin:$PATH"
+    export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-$JAVAVERSION.jdk/Contents/Home"
+fi
 
 if [ -d "$HOME/.ghcup/bin" ]; then
   export PATH="$HOME/.ghcup/bin:$PATH"
