@@ -34,3 +34,9 @@ set CONDA_FISH_INIT_FILE "$HOME/miniconda3/etc/fish/conf.d/conda.fish"
 if test -e $CONDA_FISH_INIT_FILE
     source $CONDA_FISH_INIT_FILE
 end
+
+
+# If Temurin JDK 21 is installed, add it to the PATH
+if test -d /Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/bin
+    set -gx PATH /Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/bin $PATH
+end
