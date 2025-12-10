@@ -1,0 +1,32 @@
+## ----------------------------------------
+##  Nano configuration for macOS
+## ----------------------------------------
+
+## Display settings
+set linenumbers        # show line numbers
+set softwrap           # wrap long lines
+set constantshow       # show cursor position (line/column)
+set indicator          # scrollbar-like indicator on the right
+
+## Editing behavior
+set autoindent
+set tabsize 4
+set tabstospaces       # replace tabs with spaces
+set smarthome          # Home jumps to first nonblank text
+set trimblanks         # strip trailing spaces on save
+
+## Navigation and UI
+set mouse              # enable mouse support
+set historylog         # keep search/replace history
+set casesensitive      # case-sensitive search
+
+## Safety
+set backup             # save backups: filename~
+
+## Syntax highlightin
+# Linux
+# include "/usr/share/nano/*.nano
+# Homebrew nano
+include "/opt/homebrew/share/nano/*.nanorc"
+
+

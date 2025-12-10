@@ -30,10 +30,10 @@ if test -f /etc/alpine-release
 
 
 # Activate miniconda if it exists
-set CONDA_FISH_INIT_FILE "$HOME/miniconda3/etc/fish/conf.d/conda.fish"
-if test -e $CONDA_FISH_INIT_FILE
-    source $CONDA_FISH_INIT_FILE
-end
+#set CONDA_FISH_INIT_FILE "$HOME/miniconda3/etc/fish/conf.d/conda.fish"
+#if test -e $CONDA_FISH_INIT_FILE
+#    source $CONDA_FISH_INIT_FILE
+#end
 
 
  
