@@ -35,3 +35,7 @@ vim.g.mapleader = " "
 
 -- Quick save mapping
 vim.keymap.set("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })
+
+-- Use the system clipboard
+vim.opt.clipboard = "unnamedplus"
+
