@@ -1319,4 +1319,4 @@ c = get_config()  # type: ignore #noqa
 
 ## enable vi mode
 
-c.TerminalInteractiveShell.editing_mode = "vi"
+# c.TerminalInteractiveShell.editing_mode = "vi"

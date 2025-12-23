@@ -1,7 +1,7 @@
 -- ~/.ghci
 
 -- Enable vim-style keybindings in interactive mode
-:set editor vim
+-- :set editor vim
 
 -- Change the GHCi prompt
 :set prompt "λ > "

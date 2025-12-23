@@ -115,7 +115,7 @@ fi
 
 
 # set vi keybindings
-set -o vi
+# set -o vi
 
 # enable basic autocomplete
 

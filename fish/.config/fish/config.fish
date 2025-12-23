@@ -7,7 +7,7 @@
 # Only apply in interactive sessions
 if status is-interactive
     # Use vi key bindings
-    set -g fish_key_bindings fish_vi_key_bindings
+    # set -g fish_key_bindings fish_vi_key_bindings
 
     # Additional interactive-only commands can go here
 end
@@ -24,9 +24,9 @@ end
 # ~/.config/fish/config.fish
 
 # Add standard system paths if running on Alpine Linux
-if test -f /etc/alpine-release
-        fish_add_path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
-        end
+# if test -f /etc/alpine-release
+#         fish_add_path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+#         end
 
 
 # Activate miniconda if it exists
