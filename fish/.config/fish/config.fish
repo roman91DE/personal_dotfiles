@@ -7,7 +7,7 @@
 # Only apply in interactive sessions
 if status is-interactive
     # Use vi key bindings
-    # set -g fish_key_bindings fish_vi_key_bindings
+    set -g fish_key_bindings fish_vi_key_bindings
 
     # Additional interactive-only commands can go here
 end

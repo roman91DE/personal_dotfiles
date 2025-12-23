@@ -79,7 +79,7 @@ fi
 
 
 # Set vi keybindings
-# bindkey -v
+bindkey -v
 
 # Environment Variables
 
