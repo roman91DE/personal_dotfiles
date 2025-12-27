@@ -1,5 +1,24 @@
 -- Minimal Neovim config with nice defaults
 
+
+-- Bootstrap lazy.nvim (plugin manager)
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git", "clone", "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- Add plugins here
+require("lazy").setup({
+  -- Comment plugin
+  "tpope/vim-commentary",
+  -- ...add more plugins as needed...
+})
+
 -- Enable relative line numbers
 vim.opt.relativenumber = true
 vim.opt.number = true
