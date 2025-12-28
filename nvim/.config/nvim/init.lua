@@ -12,11 +12,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Add plugins here
+-- Load Plugins via lazy vim here:  
 require("lazy").setup({
-  -- Comment plugin
   "tpope/vim-commentary",
-  -- ...add more plugins as needed...
 })
 
 -- Enable relative line numbers
