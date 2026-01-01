@@ -12,14 +12,8 @@ elif [[ -d /usr/local/bin ]]; then
   export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
-if [[ -d /opt/homebrew/bin/nano ]]; then
-    export EDITOR="/opt/homebrew/bin/nano"
-    alias nano="/opt/homebrew/bin/nano"
-fi
-
-# Don't put duplicate lines or lines starting with space in the history
+# Don't put duplicate lines in the history
 setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_SPACE
 
 # Append to the history file, don't overwrite it
 setopt APPEND_HISTORY
@@ -57,20 +51,14 @@ PROMPT="${USER_COLOR}Roman ${RESET_COLOR} %B${DIR_COLOR}%~%b $(git_branch) ${SYM
 if command -v dircolors &> /dev/null; then
     eval "$(dircolors -b ~/.dircolors 2>/dev/null || dircolors -b)"
     alias ls='ls --color=auto'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
 
-# Colored GCC warnings and errors
-# export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
 # Some more ls aliases
 alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
+alias la='ls -al'
 
 # use autocomplete if available
 if [[ -n "$HOMEBREW_PREFIX" && -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
@@ -90,8 +78,8 @@ if [ -d "$HOME/.ipython" ]; then
 fi
 
 # Set the default editor to nano
-export EDITOR='nano'
-export VISUAL='code'
+export EDITOR='vim'
+export VISUAL='vim'
 
 # python aliases
 alias pycheck='uv tool run ruff check . && uv tool run ruff format . && uv tool run ty check .'
