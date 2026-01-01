@@ -16,7 +16,6 @@ return {
       map("gn", vim.diagnostic.goto_next, "LSP next diagnostic")
     end
 
-    -- Define/extend the Pyright config
     vim.lsp.config("pyright", {
       on_attach = on_attach,
       settings = {
@@ -28,8 +27,19 @@ return {
         },
         },
         })
-
+    
     -- Enable Pyright (will attach on matching filetypes)
     vim.lsp.enable("pyright")
+
+    -- Basic Ruff LSP setup
+    vim.lsp.config("ruff", {
+      on_attach = on_attach,
+      settings = {
+        -- Use default configuration from project's pyproject.toml or ruff.toml
+      }
+    })
+
+    -- Enable Ruff (will attach on matching filetypes)
+    vim.lsp.enable("ruff")
   end,
 }
