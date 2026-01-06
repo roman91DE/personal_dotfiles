@@ -89,3 +89,4 @@ alias pycheck='uv tool run ruff check . && uv tool run ruff format . && uv tool 
 
 
 
+export LC_ALL=en_US.UTF-8
