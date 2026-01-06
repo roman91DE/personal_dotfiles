@@ -25,7 +25,7 @@ set ruler
 
 " Highlight current line
 " Adds a horizontal line under the cursor for easier tracking
-set cursorline
+"set cursorline
 
 " Show command as you type
 " Displays partial commands in the status line as you enter them (e.g., "3" when you press 3)

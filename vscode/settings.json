@@ -1,0 +1,204 @@
+{
+    // ============================================================================
+    // PYTHON CONFIGURATION
+    // ============================================================================
+
+    // Use Pylance for Python language server (autocomplete, hover info, etc)
+    "python.languageServer": "Pylance",
+
+    // Default Python interpreter path
+    "python.defaultInterpreterPath": "/Users/roman/.local/bin/python3.15",
+
+    // Python-specific editor settings
+    "[python]": {
+        // Use Ruff as the formatter for Python files
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        // Automatically format on save
+        "editor.formatOnSave": true,
+        // Run code actions and organize imports on save
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        }
+    },
+
+    // Pylance analysis settings
+    "python.analysis.typeCheckingMode": "standard",
+    // Auto-format f-strings with proper syntax
+    "python.analysis.autoFormatStrings": true,
+    // Show autocomplete for auto-imports
+    "python.analysis.autoImportCompletions": true,
+    // Add parentheses when autocompleting functions
+    "python.analysis.completeFunctionParens": true,
+    // Show inferred variable types in editor hints
+    "python.analysis.inlayHints.variableTypes": true,
+    // Show inferred function return types in editor hints
+    "python.analysis.inlayHints.functionReturnTypes": true,
+
+    // ============================================================================
+    // RUFF (Python Linter/Formatter) CONFIGURATION
+    // ============================================================================
+
+    // Set line length for code formatting
+    "ruff.lineLength": 88,
+    // Enable specific ruff lint rules: C (complexity), E (errors), F (flakes), W (warnings)
+    "ruff.lint.select": [
+        "C",
+        "E",
+        "F",
+        "W"
+    ],
+
+    // ============================================================================
+    // EDITOR UI & BEHAVIOR
+    // ============================================================================
+
+    // Never auto-close brackets (you manage them manually)
+    "editor.autoClosingBrackets": "never",
+    // Never auto-close comments
+    "editor.autoClosingComments": "never",
+    // Never auto-close quotes
+    "editor.autoClosingQuotes": "never",
+    // Enable colorization of matching bracket pairs
+    "editor.bracketPairColorization.enabled": true,
+    // Hide the minimap (scrollbar overview) on the right
+    "editor.minimap.enabled": false,
+    // Don't highlight invisible characters
+    "editor.unicodeHighlight.invisibleCharacters": false,
+
+    // ============================================================================
+    // FILE & EXPLORER SETTINGS
+    // ============================================================================
+
+    // Auto-save files after a delay
+    "files.autoSave": "afterDelay",
+    // Exclude certain directories from file watching (improves performance)
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true
+    },
+    // Don't show confirmation dialog when dragging files
+    "explorer.confirmDragAndDrop": false,
+
+    // ============================================================================
+    // GIT CONFIGURATION
+    // ============================================================================
+
+    // Automatically fetch from remote repository
+    "git.autofetch": true,
+    // Don't auto-detect git repositories in parent folders
+    "git.autoRepositoryDetection": false,
+    // Don't ask for confirmation before syncing
+    "git.confirmSync": false,
+    // Enable smart commit (commit all staged changes without prompting)
+    "git.enableSmartCommit": true,
+    // Never open repositories in parent folders
+    "git.openRepositoryInParentFolders": "never",
+
+    // ============================================================================
+    // GITHUB COPILOT CONFIGURATION
+    // ============================================================================
+
+    // Enable/disable Copilot per language (disabled by default, enabled for Go, Haskell, Python, Rust)
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "go": true,
+        "haskell": true,
+        "python": true,
+        "rust": true
+    },
+    // Enable next-edit suggestions from Copilot
+    "github.copilot.nextEditSuggestions.enabled": true,
+
+    // ============================================================================
+    // LANGUAGE-SPECIFIC SETTINGS
+    // ============================================================================
+
+    // Haskell-specific settings (empty, uses defaults)
+    "[haskell]": {},
+
+    // Go language settings
+    // Auto-update Go tools
+    "go.toolsManagement.autoUpdate": true,
+
+    // ============================================================================
+    // JUPYTER NOTEBOOK CONFIGURATION
+    // ============================================================================
+
+    // Don't ask before restarting kernel
+    "jupyter.askForKernelRestart": false,
+
+    // Define which characters trigger autocomplete in Jupyter cells per language
+    "jupyter.completionTriggerCharacters": {
+        "bash": ["$", "{"],
+        "java": [".", "@", "#"],
+        "javascript": [".", "\"", "'", "/", "@"],
+        "julia": ["."],
+        "python": [".", "%"],
+        "r": ["[", "(", ",", "$", "@", "\"", "'"],
+        "rust": [".", ":"],
+        "scala": ["."],
+        "typescript": [".", "\"", "'", "/", "@", "<"]
+    },
+
+    // Run code actions and organize imports on notebook save
+    "notebook.codeActionsOnSave": {
+        "notebook.source.fixAll": "explicit",
+        "notebook.source.organizeImports": "explicit"
+    },
+
+    // Format notebook cells on save
+    "notebook.formatOnSave.enabled": true,
+
+    // Show line numbers in notebooks
+    "notebook.lineNumbers": "on",
+
+    // Notebook editor customizations (2-space indentation)
+    "notebook.editorOptionsCustomizations": {
+        "editor.indentSize": 2,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+
+    // ============================================================================
+    // TERMINAL CONFIGURATION
+    // ============================================================================
+
+    // Use macOS Terminal.app as default external terminal
+    "terminal.external.osxExec": "terminal.app",
+    // Don't warn when pasting multiple lines into terminal
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+
+    // ============================================================================
+    // VIM/NEOVIM CONFIGURATION (via vscode-neovim extension)
+    // ============================================================================
+
+    // Enable Vim keybindings and behavior
+    "vim.smartRelativeLine": true,
+    // Load custom vimrc file for additional Vim configuration
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "$HOME/.vimrc",
+
+    // Neovim integration settings
+    "vscode-neovim.compositeKeys": {},
+
+    // Set extension affinity (priority for vscode-neovim)
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+
+    // ============================================================================
+    // WORKBENCH UI SETTINGS
+    // ============================================================================
+
+    // Define which editors open for specific file types
+    "workbench.editorAssociations": {
+        "*.copilotmd": "vscode.markdown.preview.editor",
+        "*.pdf": "pdf.preview"
+    },
+
+    // Show secondary sidebar by default
+    "workbench.secondarySideBar.defaultVisibility": "visible"
+}
