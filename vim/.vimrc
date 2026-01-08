@@ -20,7 +20,7 @@ set encoding=utf-8
 " 'number': shows absolute line number at cursor
 " 'relativenumber': shows relative line numbers from cursor (useful for motions like 5j to jump 5 lines)
 set number
-set relativenumber
+" set relativenumber
 set ruler
 
 " Highlight current line
