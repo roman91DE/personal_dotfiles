@@ -2,8 +2,6 @@
 " ============================================================================
 " MINIMALISTIC VIM/NEOVIM SHARED CONFIGURATION
 " ============================================================================
-" This file contains all common settings for both Vim and Neovim
-" Source this file from your .vimrc or init.lua
 
 " ============================================================================
 " GENERAL SETTINGS
@@ -20,7 +18,7 @@ set encoding=utf-8
 " 'number': shows absolute line number at cursor
 " 'relativenumber': shows relative line numbers from cursor (useful for motions like 5j to jump 5 lines)
 set number
-" set relativenumber
+set relativenumber
 set ruler
 
 " Highlight current line
@@ -102,7 +100,7 @@ set updatetime=250
 set backspace=indent,eol,start
 
 " Use system clipboard
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 " Persistent undo
 set undofile

@@ -60,6 +60,11 @@ fi
 alias ll='ls -l'
 alias la='ls -al'
 
+# Neovim profiles
+# - `nvim` uses ~/.config/nvim (default)
+# - `lvim` uses ~/.config/lazyvim
+alias lvim='NVIM_APPNAME=lazyvim nvim'
+
 # use autocomplete if available
 if [[ -n "$HOMEBREW_PREFIX" && -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
     source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"

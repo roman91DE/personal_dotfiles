@@ -19,43 +19,54 @@ sudo apt install stow
 
 # macOS (Homebrew)
 brew install stow
+```
 
 
-⸻
+---
 
-🚀 Installation
+## 🚀 Installation
 
 Clone the repository and stow the configs you want:
 
+```bash
 git clone https://github.com/<your-username>/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 
 # Stow selected modules
-stow bash zsh git vim nvim tmux fish ghci
+stow bash zsh git vim nvim lazyvim tmux fish ghci
+```
+
+Neovim profiles:
+
+- `nvim` uses `~/.config/nvim` (your regular config)
+- `lvim` uses `~/.config/lazyvim` (LazyVim config via `NVIM_APPNAME=lazyvim`)
 
 To undo (unstow) a config:
 
+```bash
 stow -D vim  # removes ~/.vimrc symlink
+```
 
+---
 
-⸻
+## 🧹 Tips
 
-🧹 Tips
-	•	If you get a conflict warning from stow, move or back up the conflicting file:
+- If you get a conflict warning from stow, move or back up the conflicting file:
 
+```bash
 mv ~/.ghci ~/.ghci.backup
 stow ghci
+```
 
+- To automatically adopt existing files into the repo (advanced):
 
-	•	To automatically adopt existing files into the repo (advanced):
-
+```bash
 stow --adopt git
+```
 
+---
 
-
-⸻
-
-📁 License
+## 📁 License
 
 MIT License. Use freely and adapt to your needs.
 
