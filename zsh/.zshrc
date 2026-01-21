@@ -12,6 +12,12 @@ elif [[ -d /usr/local/bin ]]; then
   export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
+if command -v tmux >/dev/null 2>&1; then
+    echo "Available tmux sessions:"
+    tmux list-sessions
+fi
+
+
 # Don't put duplicate lines in the history
 setopt HIST_IGNORE_ALL_DUPS
 
@@ -98,3 +104,6 @@ alias pycheck='uv tool run ruff check . && uv tool run ruff format . && uv tool 
 
 
 export LC_ALL=en_US.UTF-8
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
