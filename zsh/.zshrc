@@ -13,10 +13,11 @@ elif [[ -d /usr/local/bin ]]; then
 fi
 
 if command -v tmux >/dev/null 2>&1; then
-    echo "Available tmux sessions:"
-    tmux list-sessions
+    if tmux list-sessions >/dev/null 2>&1; then
+        echo "Available tmux sessions:"
+        tmux list-sessions
+    fi
 fi
-
 
 # Don't put duplicate lines in the history
 setopt HIST_IGNORE_ALL_DUPS
