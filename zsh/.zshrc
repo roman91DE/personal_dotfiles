@@ -8,6 +8,7 @@
 # Add Homebrew to PATH on MacOS
 if [[ -d /opt/homebrew/bin ]]; then
   export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+  export HOMEBREW_PREFIX="/opt/homebrew"
 elif [[ -d /usr/local/bin ]]; then
   export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
@@ -75,11 +76,15 @@ alias autogit='git pull && git add * && git commit -m "auto git command" && git 
 # - `lvim` uses ~/.config/lazyvim
 alias lvim='NVIM_APPNAME=lazyvim nvim'
 
-# use autocomplete if available
 if [[ -n "$HOMEBREW_PREFIX" && -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
+    # use autosuggestions if available
+    echo "loading zsh-autosuggestions"
     source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+elif [[ -n "$HOMEBREW_PREFIX" && -f "$HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh" ]]; then
+    # alternative: use autocomplete if available
+    echo "loading zsh-autocomplete"
+    source "$HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 fi
-
 
 # Set vi keybindings
 bindkey -v
