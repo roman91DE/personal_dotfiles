@@ -68,8 +68,12 @@ fi
 alias ll='ls -l'
 alias la='ls -al'
 
-# git aliases
-alias autogit='git pull && git add * && git commit -m "auto git command" && git push'
+
+# git convenience alias
+autogit() {
+  local msg="${1:-auto git command}"
+  git pull && git add . && git commit -m "$msg" && git push
+}
 
 # Neovim profiles
 # - `nvim` uses ~/.config/nvim (default)
