@@ -102,8 +102,8 @@ if [ -d "$HOME/.ipython" ]; then
 fi
 
 # Set the default editor to nano
-export EDITOR='vim'
-export VISUAL='vim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 # python aliases
 alias pycheck='uv tool run ruff check . && uv tool run ruff format . && uv tool run ty check .'
