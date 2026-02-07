@@ -90,8 +90,10 @@ elif [[ -n "$HOMEBREW_PREFIX" && -f "$HOMEBREW_PREFIX/share/zsh-autocomplete/zsh
     source "$HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 fi
 
-# Set vi keybindings
-bindkey -v
+# Set vi keybindings (skip inside neovim terminal)
+if [[ -z "$NVIM" ]]; then
+  bindkey -v
+fi
 
 # Environment Variables
 
@@ -101,9 +103,14 @@ if [ -d "$HOME/.ipython" ]; then
   export IPYTHONDIR=~/.ipython
 fi
 
-# Set the default editor to nano
-export EDITOR='nvim'
-export VISUAL='nvim'
+# Set the default editor to nvim if available, otherwise vim
+if command -v nvim &> /dev/null; then
+  export EDITOR='nvim'
+  export VISUAL='nvim'
+else
+  export EDITOR='vim'
+  export VISUAL='vim'
+fi
 
 # python aliases
 alias pycheck='uv tool run ruff check . && uv tool run ruff format . && uv tool run ty check .'

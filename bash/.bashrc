@@ -65,8 +65,10 @@ elif [ -f /usr/local/etc/bash_completion ]; then
 fi
 
 
-# Set vi keybindings
-set -o vi
+# Set vi keybindings (skip inside neovim terminal)
+if [[ -z "$NVIM" ]]; then
+  set -o vi
+fi
 
 # Environment Variables
 
@@ -76,9 +78,14 @@ if [ -d "$HOME/.ipython" ]; then
   export IPYTHONDIR=~/.ipython
 fi
 
-# Set the default editor to vim
-export EDITOR='vim'
-export VISUAL='vim'
+# Set the default editor to nvim if available, otherwise vim
+if command -v nvim &> /dev/null; then
+  export EDITOR='nvim'
+  export VISUAL='nvim'
+else
+  export EDITOR='vim'
+  export VISUAL='vim'
+fi
 
 # python aliases
 alias pycheck='uv tool run ruff check . && uv tool run ruff format . && uv tool run ty check .'
