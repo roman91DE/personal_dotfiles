@@ -3,16 +3,12 @@
 -- Add any additional keymaps here
 
 local opts = { noremap = true, silent = true }
--- control + c to escape in insert mode
-vim.keymap.set({ "i", "v", "s" }, "<C-c>", "<Esc>", opts)
+
 -- _ behaves likes ^ in both normal and visual mode
 vim.keymap.set({ "n", "v" }, "_", "^", opts)
 
--- terminal mode keymaps
---  map <Esc> to exit terminal-mode
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", opts)
--- Use Ctrl + C to use vim mode on line
-vim.keymap.set("t", "<C-c>", "<Esc>", opts)
+--  Switch from Terminal mode to Normal mode using Control + c instead  of Control + \ Control + n
+vim.keymap.set("t", "<C-c>", "<C-\\><C-n>", opts)
 
 -- Window Navigation using Alt + h/j/k/l for all modes
 -- Terminal mode
