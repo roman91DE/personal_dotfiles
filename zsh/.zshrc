@@ -75,6 +75,9 @@ autogit() {
   git pull && git add . && git commit -m "$msg" && git push
 }
 
+# tmux convenience alias
+alias tma='tmux attach -t'
+
 # Neovim profiles
 # - `nvim` uses ~/.config/nvim (default)
 # - `lvim` uses ~/.config/lazyvim
@@ -90,10 +93,9 @@ elif [[ -n "$HOMEBREW_PREFIX" && -f "$HOMEBREW_PREFIX/share/zsh-autocomplete/zsh
     source "$HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 fi
 
-# Set vi keybindings (skip inside neovim terminal)
-if [[ -z "$NVIM" ]]; then
-  bindkey -v
-fi
+# Set vi keybindings 
+bindkey -v
+
 
 # Environment Variables
 
