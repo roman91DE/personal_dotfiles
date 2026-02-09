@@ -1,0 +1,33 @@
+# ~/.zsh_aliases: alias definitions sourced by .zshrc
+
+# Color support
+if command -v dircolors &> /dev/null; then
+    eval "$(dircolors -b ~/.dircolors 2>/dev/null || dircolors -b)"
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# ls
+alias ll='ls -l'
+alias la='ls -al'
+
+# git
+autogit() {
+  local msg="${1:-auto git command}"
+  git pull && git add . && git commit -m "$msg" && git push
+}
+
+# tmux
+alias tma='tmux attach -t'
+alias tml='tmux list-sessions'
+alias tmc='tmux new-session -s'
+
+# Neovim profiles
+# - `nvim` uses ~/.config/nvim (default)
+# - `lvim` uses ~/.config/lazyvim
+alias lvim='NVIM_APPNAME=lazyvim nvim'
+
+# python
+alias pycheck='uv tool run ruff check . && uv tool run ruff format . && uv tool run ty check .'

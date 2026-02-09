@@ -55,33 +55,8 @@ git_branch() {
 PROMPT="${USER_COLOR}Roman ${RESET_COLOR} %B${DIR_COLOR}%~%b $(git_branch) ${SYMBOL_COLOR}⚡${RESET_COLOR} "
 
 
-# Enable color support of ls and handy aliases
-if command -v dircolors &> /dev/null; then
-    eval "$(dircolors -b ~/.dircolors 2>/dev/null || dircolors -b)"
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# Some more ls aliases
-alias ll='ls -l'
-alias la='ls -al'
-
-
-# git convenience alias
-autogit() {
-  local msg="${1:-auto git command}"
-  git pull && git add . && git commit -m "$msg" && git push
-}
-
-# tmux convenience alias
-alias tma='tmux attach -t'
-
-# Neovim profiles
-# - `nvim` uses ~/.config/nvim (default)
-# - `lvim` uses ~/.config/lazyvim
-alias lvim='NVIM_APPNAME=lazyvim nvim'
+# Aliases
+source ~/.zsh_aliases
 
 if [[ -n "$HOMEBREW_PREFIX" && -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
     # use autosuggestions if available
@@ -114,8 +89,6 @@ else
   export VISUAL='vim'
 fi
 
-# python aliases
-alias pycheck='uv tool run ruff check . && uv tool run ruff format . && uv tool run ty check .'
 
 
 
