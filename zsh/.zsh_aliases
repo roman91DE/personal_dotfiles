@@ -23,6 +23,7 @@ autogit() {
 alias tma='tmux attach -t'
 alias tml='tmux list-sessions'
 alias tmc='tmux new-session -s'
+alias tmd='tmux kill-session -t'
 
 # Neovim profiles
 # - `nvim` uses ~/.config/nvim (default)
