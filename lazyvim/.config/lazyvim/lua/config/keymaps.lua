@@ -7,8 +7,10 @@ local opts = { noremap = true, silent = true }
 -- _ behaves likes ^ in both normal and visual mode
 vim.keymap.set({ "n", "v" }, "_", "^", opts)
 
---  Switch from Terminal mode to Normal mode using Control + c instead  of Control + \ Control + n
-vim.keymap.set("t", "<C-c>", "<C-\\><C-n>", opts)
+-- Esc changes to Normal Mode in Terminal Mode
+-- C-c changes to Vim Normal Mode in Terminal Mode
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", opts)
+vim.keymap.set("t", "<C-c>", "<Esc>", opts)
 
 -- Window Navigation using Alt + h/j/k/l for all modes
 -- Terminal mode
