@@ -9,9 +9,12 @@ vim.keymap.set({ "n", "v" }, "_", "^", opts)
 
 -- Esc changes to Normal Mode in Terminal Mode
 -- C-c changes to Vim Normal Mode in Terminal Mode
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", opts)
-vim.keymap.set("t", "<C-c>", "<Esc>", opts)
+--vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", opts)
+--vim.keymap.set("t", "<C-c>", "<Esc>", opts)
 
+-- Ctrl-C to enter Normal Mode from Terminal Mode
+vim.keymap.set("t", "<C-c>", "<C-\\><C-n>", opts)
+--
 -- Window Navigation using Alt + h/j/k/l for all modes
 -- Terminal mode
 vim.api.nvim_set_keymap("t", "<C-h>", [[<C-\><C-N><C-w>h]], opts)
