@@ -57,30 +57,8 @@ fi
 alias ll='ls -l'
 alias la='ls -al'
 
-# Safe rm: confirm before recursive deletes (path blocking handled by safe-rm)
-rm() {
-  local has_recursive=false
-  local targets=()
-
-  for arg in "$@"; do
-    case "$arg" in
-      --) break ;;
-      -*) [[ "$arg" =~ [rR] ]] && has_recursive=true ;;
-      *)  targets+=("$arg") ;;
-    esac
-  done
-
-  if $has_recursive; then
-    echo "rm: recursive delete on: ${targets[*]}"
-    read -p "Continue? [y/N] " reply
-    [[ "$reply" =~ ^[Yy]$ ]] || { echo "Aborted."; return 1; }
-  fi
-  if command -v safe-rm &>/dev/null; then
-    safe-rm "$@"
-  else
-    command rm "$@"
-  fi
-}
+alias rm='echo "rm is disabled, use remove or trash or /bin/rm instead."'
+alias rmi='/bin/rm -i'
 
 # Use bash-completion if available
 if [ -f /etc/bash_completion ]; then
