@@ -58,7 +58,7 @@ alias ll='ls -l'
 alias la='ls -al'
 
 alias rm='echo "rm is disabled, use remove or trash or /bin/rm instead."'
-alias rmi='/bin/rm -i'
+rmi() { /bin/rm "$@" -i; }
 
 # Use bash-completion if available
 if [ -f /etc/bash_completion ]; then
