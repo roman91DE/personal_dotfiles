@@ -75,7 +75,11 @@ rm() {
     read -p "Continue? [y/N] " reply
     [[ "$reply" =~ ^[Yy]$ ]] || { echo "Aborted."; return 1; }
   fi
-  command rm "$@"
+  if command -v safe-rm &>/dev/null; then
+    safe-rm "$@"
+  else
+    command rm "$@"
+  fi
 }
 
 # Use bash-completion if available
