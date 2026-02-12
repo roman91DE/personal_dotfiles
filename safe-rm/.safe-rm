@@ -1,0 +1,45 @@
+# Paths that safe-rm will never delete
+# System-critical (Linux + macOS)
+/
+/bin
+/boot
+/dev
+/etc
+/lib
+/lib64
+/proc
+/sbin
+/sys
+/usr
+/usr/bin
+/usr/lib
+/usr/local
+/usr/sbin
+/var
+/home
+/opt
+/tmp
+
+# macOS-specific
+/Applications
+/Library
+/System
+/Users
+/Volumes
+/private
+
+# Home directories (update username if different per machine)
+/Users/roman
+/home/roman
+
+# Personal directories — macOS paths
+/Users/roman/Documents
+/Users/roman/Desktop
+/Users/roman/Downloads
+/Users/roman/repos
+
+# Personal directories — Linux paths
+/home/roman/Documents
+/home/roman/Desktop
+/home/roman/Downloads
+/home/roman/repos
