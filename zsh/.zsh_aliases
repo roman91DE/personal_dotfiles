@@ -21,11 +21,20 @@ autogit() {
   git pull && git add . && git commit -m "$msg" && git push
 }
 
+# claude code
+qp() {
+  if [ $# -gt 0 ]; then
+    claude -p "$*"
+  else
+    claude -p "$(cat)"
+  fi
+}
+
 # tmux
 alias tma='tmux attach -t'
 alias tml='tmux list-sessions'
 alias tmc='tmux new-session -s'
-alias tmd='tmux kill-session -t'
+alias tmk='tmux kill-session -t'
 
 # Neovim profiles
 # - `nvim` uses ~/.config/nvim (default)

@@ -89,5 +89,14 @@ else
   export VISUAL='vim'
 fi
 
+# claude code
+qp() {
+  if [ $# -gt 0 ]; then
+    claude -p "$*"
+  else
+    claude -p "$(cat)"
+  fi
+}
+
 # python aliases
 alias pycheck='uv tool run ruff check . && uv tool run ruff format . && uv tool run ty check .'
