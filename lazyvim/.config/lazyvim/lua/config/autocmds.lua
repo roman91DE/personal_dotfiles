@@ -11,6 +11,19 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
 
+-- macOS: re-sign tree-sitter parsers after install/update (macOS 26+ kills unsigned .so files)
+vim.api.nvim_create_autocmd("User", {
+  group = augroup("treesitter_codesign"),
+  pattern = { "TSInstall", "TSUpdate" },
+  callback = function()
+    local parser_dir = vim.fn.stdpath("data") .. "/site/parser"
+    vim.fn.jobstart(
+      string.format("find %s -name '*.so' | xargs codesign --sign - --force 2>/dev/null", parser_dir),
+      { detach = true }
+    )
+  end,
+})
+
 -- In text-like files, use spell checking for germand and english
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("wrap_spell"),
