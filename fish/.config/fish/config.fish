@@ -65,9 +65,9 @@ end
 # Color support for ls
 if command -q dircolors
     if test -f ~/.dircolors
-        eval (dircolors -b ~/.dircolors)
+        set -gx LS_COLORS (dircolors -b ~/.dircolors | string replace -r "LS_COLORS='(.*)'; export LS_COLORS" '$1')
     else
-        eval (dircolors -b)
+        set -gx LS_COLORS (dircolors -b | string replace -r "LS_COLORS='(.*)'; export LS_COLORS" '$1')
     end
     alias ls='ls --color=auto'
     alias grep='grep --color=auto'
