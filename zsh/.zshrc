@@ -60,7 +60,7 @@ git_branch() {
 }
 
 # Custom prompt
-PROMPT="${USER_COLOR}Roman ${RESET_COLOR} %B${DIR_COLOR}%~%b $(git_branch) ${SYMBOL_COLOR}⚡${RESET_COLOR} "
+PROMPT="${USER_COLOR}%n@%m ${RESET_COLOR} %B${DIR_COLOR}%~%b $(git_branch) ${SYMBOL_COLOR}⚡${RESET_COLOR} "
 
 
 # Aliases

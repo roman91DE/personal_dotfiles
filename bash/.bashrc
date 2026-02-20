@@ -49,7 +49,7 @@ git_branch() {
 }
 
 # Custom prompt
-PS1="${USER_COLOR}Roman ${RESET_COLOR} \[${DIR_COLOR}\]\w\[${RESET_COLOR}\] \$(git_branch) ${SYMBOL_COLOR}⚡${RESET_COLOR} "
+PS1="${USER_COLOR}\u@\h ${RESET_COLOR} \[${DIR_COLOR}\]\w\[${RESET_COLOR}\] \$(git_branch) ${SYMBOL_COLOR}⚡${RESET_COLOR} "
 
 
 # Enable color support of ls and handy aliases
