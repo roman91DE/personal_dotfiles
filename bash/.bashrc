@@ -12,6 +12,10 @@ elif [[ -d /usr/local/bin ]]; then
   export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
+if [[ -d "$HOME/.local/bin" ]]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
 # Don't put duplicate lines in the history
 HISTCONTROL=ignoredups:erasedups
 

@@ -13,6 +13,10 @@ elif [[ -d /usr/local/bin ]]; then
   export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
+if [[ -d "$HOME/.local/bin" ]]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
 if command -v tmux >/dev/null 2>&1; then
     if tmux list-sessions >/dev/null 2>&1; then
         echo "Available tmux sessions:"
