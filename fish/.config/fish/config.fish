@@ -22,12 +22,9 @@ if test -d $HOME/bin
 end
 
 
-# Show available tmux sessions on startup
-if command -q tmux
-    if tmux list-sessions >/dev/null 2>&1
-        echo "Available tmux sessions:"
-        tmux list-sessions
-    end
+# Auto-attach or create a tmux session when connecting via SSH
+if command -q tmux; and test -n "$SSH_CONNECTION"; and test -z "$TMUX"
+    exec tmux new-session -A -s main
 end
 
 

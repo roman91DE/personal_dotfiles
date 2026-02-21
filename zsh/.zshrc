@@ -21,11 +21,9 @@ if [[ -d "$HOME/bin" ]]; then
   export PATH="$HOME/bin:$PATH"
 fi
 
-if command -v tmux >/dev/null 2>&1; then
-    if tmux list-sessions >/dev/null 2>&1; then
-        echo "Available tmux sessions:"
-        tmux list-sessions
-    fi
+# Auto-attach or create a tmux session when connecting via SSH
+if command -v tmux >/dev/null 2>&1 && [[ -n "$SSH_CONNECTION" && -z "$TMUX" ]]; then
+    exec tmux new-session -A -s main
 fi
 
 # Don't put duplicate lines in the history
