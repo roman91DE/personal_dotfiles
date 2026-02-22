@@ -1,8 +1,6 @@
 # ~/.config/fish/config.fish: sourced by fish for interactive shells.
 
-if not status is-interactive
-    return
-end
+if status is-interactive
 
 
 # Add Homebrew to PATH on macOS
@@ -85,3 +83,5 @@ alias tmk='tmux kill-session -t'
 
 # Python
 alias pycheck='uv tool run ruff check . && uv tool run ruff format . && uv tool run ty check .'
+
+end # if status is-interactive
