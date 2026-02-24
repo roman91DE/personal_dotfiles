@@ -73,7 +73,7 @@ end
 alias ll='ls -l'
 alias la='ls -al'
 
-alias rm='echo "rm is disabled, use remove or trash or /bin/rm instead."'
+# alias rm='echo "rm is disabled, use remove or trash or /bin/rm instead."'
 
 # Tmux
 alias tma='tmux attach -t'

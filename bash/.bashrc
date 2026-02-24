@@ -70,7 +70,7 @@ fi
 alias ll='ls -l'
 alias la='ls -al'
 
-alias rm='echo "rm is disabled, use remove or trash or /bin/rm instead."'
+# alias rm='echo "rm is disabled, use remove or trash or /bin/rm instead."'
 
 # Use bash-completion if available
 if [ -f /etc/bash_completion ]; then
