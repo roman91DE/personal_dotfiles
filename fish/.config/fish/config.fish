@@ -41,9 +41,11 @@ end
 if command -q nvim
     set -gx EDITOR nvim
     set -gx VISUAL nvim
+    set -gx NNN_OPENER nvim
 else
     set -gx EDITOR vim
     set -gx VISUAL vim
+    set -gx NNN_OPENER vim
 end
 
 set -gx LC_ALL en_US.UTF-8

@@ -90,9 +90,11 @@ fi
 if command -v nvim &> /dev/null; then
   export EDITOR='nvim'
   export VISUAL='nvim'
+  export NNN_OPENER='nvim'
 else
   export EDITOR='vim'
   export VISUAL='vim'
+  export NNN_OPENER='vim'
 fi
 
 
