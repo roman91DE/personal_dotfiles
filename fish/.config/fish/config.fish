@@ -19,11 +19,6 @@ if test -d $HOME/bin
     fish_add_path $HOME/bin
 end
 
-if test -d $HOME/.config/emacs/bin
-    fish_add_path $HOME/.config/emacs/bin
-end
-
-
 # Auto-attach or create a tmux session when connecting via SSH
 if command -q tmux; and test -n "$SSH_CONNECTION"; and test -z "$TMUX"
     exec tmux new-session -A -s main
