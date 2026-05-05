@@ -26,13 +26,10 @@ Each directory mirrors the home directory structure for stow. For example:
 - `nvim/.config/nvim/init.lua` -> `~/.config/nvim/init.lua`
 - `vscode/settings.json` -> `~/settings.json` (manually placed, not standard stow)
 
-### Neovim Setup
+### Editor Setup
 
-Two Neovim profiles exist:
-- `nvim` — minimal config that sources `~/.vimrc` for shared Vim/Neovim settings
-- `lazyvim` — full LazyVim distribution, launched via `lvim` alias (`NVIM_APPNAME=lazyvim nvim`)
-
-The `vim/.vimrc` is the shared base config used by both Vim and Neovim (`nvim/init.lua` sources it).
+- `nvim` — full LazyVim distribution, default Neovim config at `~/.config/nvim/`
+- `vim` — basic Vim using `vim/.vimrc`
 
 ### Shell Config
 
@@ -40,5 +37,4 @@ Both `bash/.bashrc` and `zsh/.zshrc` share similar structure (prompt, aliases, h
 
 Key aliases defined in zsh:
 - `autogit` — pull, add all, commit, push in one command
-- `lvim` — launch LazyVim profile
 - `pycheck` — run ruff check + ruff format + ty check via uv
