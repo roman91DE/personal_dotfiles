@@ -20,6 +20,10 @@ if [[ -d "$HOME/bin" ]]; then
   export PATH="$HOME/bin:$PATH"
 fi
 
+if [[ -d "$HOME/.ghcup/bin" ]]; then
+  export PATH="$HOME/.ghcup/bin:$PATH"
+fi
+
 if [[ -d "$HOME/.config/emacs/bin" ]]; then
   export PATH="$HOME/.config/emacs/bin:$PATH"
 fi

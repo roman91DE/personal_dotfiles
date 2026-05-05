@@ -25,6 +25,10 @@ if [[ -d "$HOME/.config/emacs/bin" ]]; then
   export PATH="$HOME/.config/emacs/bin:$PATH"
 fi
 
+if [[ -d "$HOME/.ghcup/bin" ]]; then
+  export PATH="$HOME/.ghcup/bin:$PATH"
+fi
+
 # Auto-attach or create a tmux session when connecting via SSH
 if command -v tmux >/dev/null 2>&1 && [[ -n "$SSH_CONNECTION" && -z "$TMUX" ]]; then
     exec tmux new-session -A -s main
