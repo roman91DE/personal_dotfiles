@@ -23,6 +23,10 @@ if test -d $HOME/.ghcup/bin
     fish_add_path $HOME/.ghcup/bin
 end
 
+if test -d $HOME/.cargo/bin
+    fish_add_path $HOME/.cargo/bin
+end
+
 # Auto-attach or create a tmux session when connecting via SSH
 if command -q tmux; and test -n "$SSH_CONNECTION"; and test -z "$TMUX"
     exec tmux new-session -A -s main
